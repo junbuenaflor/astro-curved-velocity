@@ -7,7 +7,7 @@ This repo will serve as my repository for learning the basic Astro operation.
 |-------:|-------------|
 | Title | The count |
 
-<detail>
+<details>
 <summary>This is a summary of a detail section</summary>
 This is the text inside the detail.
-</detail>
+</details>
