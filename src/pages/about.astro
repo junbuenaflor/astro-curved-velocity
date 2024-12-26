@@ -1,4 +1,7 @@
 ---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
 import '../styles/global.css';
 const pageTitle = "About me";
 const identity = {
@@ -34,9 +37,7 @@ const skillColor = "magenta";
 		</style>
 	</head>
 	<body>
-		<a href="/">Home</a>
-		<a href="/about">About</a>
-		<a href="/blog">Blog</a>
+		<Header />
 		<h1>{pageTitle}</h1>
 		<h2>We are learning</h2>
 		<p>I'm a learner at life and Astro.</p>
@@ -57,5 +58,9 @@ const skillColor = "magenta";
 		{happy && <p>I am happy to be learning Astro!</p>}
 		{finished && <p>I finished this tutorial!</p>}
 		{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+		<Footer />
+		<script>
+			import '../scripts/menu.js';
+		</script>
 	</body>
 </html>

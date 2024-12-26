@@ -1,5 +1,9 @@
 ---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
+import "../styles/global.css";
+const pageTitle = "Home page";
 ---
 
 <html lang="en">
@@ -11,7 +15,12 @@
 		<title>Astro demo</title>
 	</head>
 	<body>
+		<Header />
 		<h1>Astro demo</h1>
 		<h2>My Astro Site</h2>
+		<Footer />
+		<script>
+			import "../scripts/menu.js";
+		</script>
 	</body>
 </html>
