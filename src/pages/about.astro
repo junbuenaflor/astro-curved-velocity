@@ -1,4 +1,17 @@
 ---
+import '../styles/global.css';
+const pageTitle = "About me";
+const identity = {
+	firstName: "Jun",
+	country: "Australia",
+	occupation: "IT Support",
+	hobbies: ["electronics", "aeronautics", "travel"]
+};
+const skills = ["HTML", "CSS", "Javascript", "Astro", "Linux"];
+const happy = true;
+const finished = false;
+const goal = 2;
+const skillColor = "magenta";
 
 ---
 
@@ -8,11 +21,41 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>About us</title>
+		<title>{pageTitle}</title>
+		<style define:vars={{skillColor}}>
+			h1 {
+				color: purple;
+				font-size: 4rem;
+			}
+			.skill {
+				color: var(--skillColor);
+				font-weight: bold;
+			}
+		</style>
 	</head>
 	<body>
-		<h1>About us</h1>
+		<a href="/">Home</a>
+		<a href="/about">About</a>
+		<a href="/blog">Blog</a>
+		<h1>{pageTitle}</h1>
 		<h2>We are learning</h2>
-		<p>I'm a learner at life.</p>
+		<p>I'm a learner at life and Astro.</p>
+		<p>This site will be updated as I progress through my studies.</p>
+
+		<p>Here are a few facts about me:</p>
+		<ul>
+			<li>My name is {identity.firstName}.</li>
+			<li>I live in {identity.country} and I work as an {identity.occupation}.</li>
+			{identity.hobbies.length >= 2 &&  
+				<li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+			}
+		</ul>
+		<p>My skills are:</p>
+		<ul>
+			{skills.map((skill) => <li class="skill">{skill}</li>)}
+		</ul>
+		{happy && <p>I am happy to be learning Astro!</p>}
+		{finished && <p>I finished this tutorial!</p>}
+		{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
 	</body>
 </html>
